@@ -1,0 +1,13 @@
+version: '3.9'
+
+services:
+  db:
+    image: mysql
+    container_name: algalog-container
+    environment:
+      MYSQL_ROOT_PASSWORD: "algalog"
+      MYSQL_DATABASE: "algalog"
+    ports:
+     - "3306:3306"
+    
+    
