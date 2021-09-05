@@ -6,7 +6,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+
+import com.algaworks.algalog.domain.ValidationGroups;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -18,6 +21,7 @@ import lombok.Setter;
 @Entity  // para que essa classe recebe uma entidade no banco de dados se o nome da tabela fosse diferente @Table(name='tb_cliente')
 public class Cliente {
 			
+			@NotNull(groups = ValidationGroups.ClienteId.class)
 			@EqualsAndHashCode.Include // ? aprender
 			@Id    // define a chave primaria 
 			@GeneratedValue(strategy = GenerationType.IDENTITY) // para usar a forma nativa do banco de dados
